@@ -21,3 +21,4 @@ spec:
           serviceName: grafana
           servicePort: 3000
         path: /
+        pathType: Prefix
