@@ -24,7 +24,10 @@ spec:
     http:
       paths:
       - backend:
-          servicePort: {{ required ".ports.grafana is required" $.Values.ports.grafana }}
-          serviceName: grafana-{{ $.Values.role }}
+          service:
+            port:
+              number: {{ required ".ports.grafana is required" $.Values.ports.grafana }}
+            name: grafana-{{ $.Values.role }}
         path: /
+        pathType: Prefix
   {{- end }}

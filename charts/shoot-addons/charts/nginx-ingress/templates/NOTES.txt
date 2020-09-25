@@ -42,9 +42,12 @@ An example Ingress that makes use of the controller:
         http:
           paths:
             - backend:
-                serviceName: exampleService
-                servicePort: 80
+                service:
+                  name: exampleService
+                  port:
+                    number: 80
               path: /
+              pathType: Prefix
     # This section is only required if TLS is to be enabled for the Ingress
     tls:
         - hosts:
