@@ -18,7 +18,9 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: aggregate-prometheus-web
-          servicePort: 80
+          service:
+            name: aggregate-prometheus-web
+            port:
+              number: 80
         path: /
         pathType: Prefix
